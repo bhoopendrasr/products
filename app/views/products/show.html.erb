@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <%= image_tag @product.image, class: 'img-fluid', width: 150, height: 150 %>
+    </div>
+    <div class="col-md-6">
+      <h1><%= @product.title %></h1>
+      <p><strong>Description:</strong> <%= @product.description %></p>
+      <p><strong>Rating:</strong> <%= @product.rating["rate"] %> (based on <%= @product.rating["count"] %>)</p>
+      <%= link_to 'Back to Products', products_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

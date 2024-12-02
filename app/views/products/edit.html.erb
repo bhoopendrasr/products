@@ -1,0 +1,31 @@
+<h1>Product</h1>
+<%= form_with model: @product, local: true do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title, class: ('field_with_errors' if @product.errors[:title].any?) %>
+    <% if @product.errors[:title].any? %>
+      <div class="error-message"><%= @product.errors[:title].join(', ') %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :price %>
+    <%= form.number_field :price, class: ('field_with_errors' if @product.errors[:price].any?) %>
+    <% if @product.errors[:price].any? %>
+      <div class="error-message"><%= @product.errors[:price].join(', ') %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description, class: ('field_with_errors' if @product.errors[:description].any?) %>
+    <% if @product.errors[:description].any? %>
+      <div class="error-message"><%= @product.errors[:description].join(', ') %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
